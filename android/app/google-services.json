@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "114347669511",
+    "project_id": "login-4bf91",
+    "storage_bucket": "login-4bf91.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:114347669511:android:44dd4cb80e1728541012a2",
+        "android_client_info": {
+          "package_name": "com.exactpixel.flutter_login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "114347669511-h29redl3b7uj6a3b73usfjk7kneulbng.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkmBmgix-mSh7BmYKtAQM9fQi5ukUbSvo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "114347669511-h29redl3b7uj6a3b73usfjk7kneulbng.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "114347669511-i2lmf6a3t6i816chr0tu0dndht2v1eu7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.exactpixel.flutterlogin"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
