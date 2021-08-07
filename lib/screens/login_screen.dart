@@ -16,6 +16,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   late String email;
   late String password;
+  bool _isObscure = true;
   bool showSpinner = false;
   @override
   void initState() {
@@ -33,6 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
       UserCredential userCredential = await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
       if (userCredential != null) {
+        print('go to application after login');
         //Continue onto the application
         //Navigator.pushNamed(context, NextScreen.id);
       }
@@ -88,13 +90,23 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 8.0,
               ),
               TextField(
-                obscureText: true,
+                obscureText: _isObscure,
                 textAlign: TextAlign.center,
                 onChanged: (value) {
                   password = value;
                 },
                 decoration: kTextFieldDecoration.copyWith(
-                    hintText: 'Enter your password'),
+                  hintText: 'Enter your password',
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                        _isObscure ? Icons.visibility : Icons.visibility_off),
+                    onPressed: () {
+                      setState(() {
+                        _isObscure = !_isObscure;
+                      });
+                    },
+                  ),
+                ),
               ),
               SizedBox(
                 height: 24.0,

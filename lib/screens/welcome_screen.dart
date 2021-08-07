@@ -89,6 +89,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
               color: Colors.blueAccent,
               title: 'Register',
               onPress: () {
+                print('register clicked');
                 Navigator.pushNamed(context, RegistrationScreen.id);
               },
             ),

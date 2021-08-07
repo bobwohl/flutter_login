@@ -16,6 +16,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
 
   late String email;
   late String password;
+
+  bool _isObscure = true;
   bool showSpinner = false;
 
   @override
@@ -56,13 +58,22 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 height: 8.0,
               ),
               TextField(
-                obscureText: true,
+                obscureText: _isObscure,
                 textAlign: TextAlign.center,
                 onChanged: (value) {
                   password = value;
                 },
                 decoration: kTextFieldDecoration.copyWith(
                   hintText: 'Enter your password',
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                        _isObscure ? Icons.visibility : Icons.visibility_off),
+                    onPressed: () {
+                      setState(() {
+                        _isObscure = !_isObscure;
+                      });
+                    },
+                  ),
                 ),
               ),
               SizedBox(
@@ -77,6 +88,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   });
 
                   try {
+                    print('adding new user');
                     final newUser = await _auth.createUserWithEmailAndPassword(
                       email: email,
                       password: password,
@@ -85,6 +97,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       setState(() {
                         showSpinner = false;
                       });
+                      print('go to application after registration');
                       //continue onto the next screen
                       //Navigator.pushNamed(context, NextScreen.id);
                     }
